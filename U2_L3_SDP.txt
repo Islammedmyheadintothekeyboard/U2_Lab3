@@ -1,0 +1,5 @@
+1. In is_winner() as this is called after the current player's turn is over and it is time for it to be the next player's turn.
+2. I'm going to ask the user where they would like to place their mark on the board and provide an example of how they should answer. They should answer in two letters like tr for top right.
+3. __check_win() should be called during is_winner() so that is_winner() can check if there is a winner before trying to determine a false winner. It should not accept any arguments.
+4. A function for asking a player for their move and then updating the board based off of that move, and a function for determining if a player has won and how to deal with that.
+5. I'm going to check if a diagonal, row, or column all equal the same token. If that is true then the game will end and whoever placed the last token wins the game.
