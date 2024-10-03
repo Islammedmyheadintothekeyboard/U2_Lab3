@@ -7,7 +7,16 @@ class TicTacToe:
     self.__turn = choice(["o", "x"])
 
   def __str__(self):
-    return str(self.__board[0]) + "\n" + str(self.__board[1]) + "\n" + str(self.__board[2])
+    ReturnedString = ""
+    for row in self.__board:
+      ReturnedString += "["
+      for place in row:
+        if place is not None:
+          ReturnedString += f" {place},"
+        else:
+          ReturnedString += "  ,"
+      ReturnedString += "]\n"
+    return ReturnedString
 
 
   def __check_win(self):
@@ -71,14 +80,18 @@ class TicTacToe:
       y = 0
     elif placement[0] == 'm':
       y = 1
-    else:
+    elif placement[0] == 'b':
       y = 2
+    else:
+      y = iho
 
     if placement[1] == 'l':
       x = 0
     elif placement[1] == 'm':
       x = 1
-    else:
+    elif placement[1] == 'r':
       x = 2
+    else:
+      x = iho
 
     return y, x
